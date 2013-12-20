@@ -14,7 +14,7 @@
 # as this script. Hooks should return 0 if successful and nonzero to cancel the
 # commit. They are executed in the order in which they are listed.
 #HOOKS="pre-commit-default pre-commit-compile pre-commit-uncrustify"
-HOOKS="pre-commit-default pre-commit-compile pre-commit-uncrustify"
+HOOKS="pre-commit-uncrustify"
 ###########################################################
 # There should be no need to change anything below this line.
 
@@ -32,12 +32,13 @@ SCRIPTPATH="$(dirname "$SCRIPT")"
 
 for hook in $HOOKS
 do
-    echo "Running hook: $hook"
+    echo "Reformatting using: $hook"
     # run hook if it exists
     # if it returns with nonzero exit with 1 and thus abort the commit
     if [ -f "$SCRIPTPATH/$hook" ]; then
         "$SCRIPTPATH/$hook"
         if [ $? != 0 ]; then
+            git add "$0"
             exit 1
         fi
     else
