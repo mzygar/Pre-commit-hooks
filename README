@@ -15,3 +15,6 @@ pre-commit:
 pre-commit-uncrustify:
     Run uncrustify on your sourcefiles and abort the commit if style violations
     have been detected. Generate a patch to fix these violations.
+
+uncrustify_obj_c.cfg:
+   Uncrusify config file for Objective-C.
