@@ -1,4 +1,5 @@
-This repository contains some useful pre-commit hooks to use with git.
+This repository contains code formatting pre-commit hook to use with git. It works easily with Xcode.
+
 Check INSTALL for documentation on how to install and use these hooks.
 
 canonicalize_filename.sh
@@ -10,13 +11,6 @@ install_hooks.sh:
 
 pre-commit:
     Allow to run multiple pre-commit hooks as specified in the script.
-
-pre-commit-compile:
-    Compile the project and abort commit if it fails.
-
-pre-commit-default:
-    The default git pre-commit hook checking for example for trailing
-    whitespaces.
 
 pre-commit-uncrustify:
     Run uncrustify on your sourcefiles and abort the commit if style violations
